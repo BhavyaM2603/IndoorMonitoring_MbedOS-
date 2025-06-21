@@ -1,0 +1,39 @@
+since keil studio will not run the code without all the proper hardware connected 
+i have run the code in c++ gdb online compiler to get values
+(according to cde the values get generated randomly and we only print the values a particular number of times
+the output is the same, a CSV format style to further be able to plot graphs 
+
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <thread>
+#include <chrono>
+
+int get_simulated_value(int min, int max) {
+    return min + (rand() % (max - min + 1));
+}
+
+int main() {
+    std::srand(std::time(nullptr)); // Seed for random values
+    std::cout << "Time(s),Temperature(°C),Humidity(%),AirQuality,LightLevel,Alert\n";
+
+    float time = 0.0;
+
+    for (int i = 0; i < 20; ++i) {  // Simulate 20 readings
+        int temperature = get_simulated_value(20, 40);
+        int humidity    = get_simulated_value(20, 60);
+        int airQuality  = get_simulated_value(100, 300);
+        int lightLevel  = get_simulated_value(100, 700);
+
+        bool alert = (temperature > 30 || humidity < 30 || airQuality > 200 || lightLevel < 300);
+
+        std::cout << time << "," << temperature << "," << humidity << ","
+                  << airQuality << "," << lightLevel << "," << (alert ? "YES" : "NO") << std::endl;
+
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        time += 1.0;
+    }
+
+    return 0;
+}
