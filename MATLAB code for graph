@@ -1,0 +1,33 @@
+save the recorded sensor data in a csv file and upload in MATLAB to be able to create a graph for visual analysis. 
+
+* MATLAB CODE *
+
+data = readtable('indoor.csv.xlsx');  % Or add 'VariableNamingRule','preserve' if needed
+
+% See actual column names
+disp(data.Properties.VariableNames)
+
+% Use actual variable names from your sheet
+time        = data.Time_s_;
+temperature = data.Temperature__C_;
+humidity    = data.Humidity___;
+airQuality  = data.AirQuality;
+lightLevel  = data.LightLevel;
+alertFlags  = strcmp(data.Alert, 'YES');
+
+% Plotting
+figure;
+plot(time, temperature, '-o', 'DisplayName', 'Temperature (°C)'); hold on;
+plot(time, humidity, '-s', 'DisplayName', 'Humidity (%)');
+plot(time, airQuality, '-^', 'DisplayName', 'Air Quality');
+plot(time, lightLevel, '-d', 'DisplayName', 'Light Level');
+
+% Highlight alerts
+plot(time(alertFlags), temperature(alertFlags), 'rx', ...
+    'MarkerSize', 10, 'LineWidth', 2, 'DisplayName', 'Alerts Triggered');
+
+xlabel('Time (s)');
+ylabel('Sensor Readings');
+title('Indoor Environment Monitoring');
+legend('Location', 'best');
+grid on;
