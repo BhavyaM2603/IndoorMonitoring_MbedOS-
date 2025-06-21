@@ -42,26 +42,31 @@ int main() {   //infifinte loop
 }
 
 
-* OUTPUT *
+* OUTPUT *        prints in csv format 
+     Indoor Environment Monitoring System (Simulation)
+[?2004l
+Time(s),Temperature(°C),Humidity(%),AirQuality,LightLevel,Alert
+0,26,41,116,286,YES
+1,28,49,229,264,YES
+2,25,54,108,365,NO
+3,20,56,135,379,NO
+4,23,52,126,208,YES
+5,29,21,290,505,YES
+6,30,22,292,459,YES
+7,34,51,242,659,YES
+8,22,44,134,376,NO
+9,33,49,101,278,YES
+10,22,29,155,391,YES
+11,26,30,137,190,YES
+12,31,51,127,636,YES
+13,31,59,197,218,YES
+14,34,56,232,232,YES
+15,26,32,178,508,NO
+16,34,34,144,288,YES
+17,26,24,263,655,YES
+18,20,54,137,696,NO
+19,40,43,195,268,YES
 
-    Indoor Environment Monitoring System (Simulation)
+   
 
---- Sensor Readings ---
-Temperature : 34 °C
-Humidity    : 28 %
-Air Quality : 210
-Light Level : 450
-Warning: High temperature!
-Warning: Low humidity!
-Warning: Poor air quality!
-
---- Sensor Readings ---
-Temperature : 25 °C
-Humidity    : 45 %
-Air Quality : 130
-Light Level : 250
-Warning: Room is dark!
-
-...
-prints every three seconds endlessly in a loop. The alert LED is also turned ON or OFF based on the logic.
 
