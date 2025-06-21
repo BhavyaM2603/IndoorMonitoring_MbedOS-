@@ -23,7 +23,7 @@ PROJECT FILES
 
 SAMPLE OUTPUT PLOT
 
-![Plot](screenshot_plot.png)
+![Plot](Screenshot 2025-06-21 121707.png)
 
 ---
 
