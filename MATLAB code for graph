@@ -31,3 +31,17 @@ ylabel('Sensor Readings');
 title('Indoor Environment Monitoring');
 legend('Location', 'best');
 grid on;
+
+
+*GRAPH ANALYSIS*
+` Temperature `: Fluctuates between 20–40°C. Alerts triggered when >30°C — signals overheating risks.
+
+` Humidity `: Dips below 30% trigger alerts — indicates dry indoor conditions, potentially uncomfortable or harmful for electronics.
+
+` Air Quality `: Values above 200 AQI prompt warnings — flags poor air that could affect health.
+
+` Light Level `: Drops below 300 imply darkness — useful for ambient control or security cues.
+
+` Alerts `: Clearly show when any parameter crosses unsafe thresholds, making the system responsive and informative.
+
+The graph gives real-time insights into indoor conditions, validating how well the system simulates environmental monitoring with actionable alerts.
