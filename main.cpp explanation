@@ -1,0 +1,29 @@
+this text explains the project code
+* AIM *: building an indoor environment sensor monitroing system(Simulation) using MBed OS.
+    
+* OBJECTIVES *: sensors to identify and simulate values for temperature, humidity, air quality and light level
+            alarm to indicate if threshold is crossed
+            logging sensor data every few seconds.
+
+* TOOLS USED * : Keil Studio Cloud IDE, C++ code on MBed OS Framework
+Mbed OS is a real-time operating system (RTOS) developed by ARM, designed for embedded systems on ARM Cortex-M microcontrollers.
+Think of it as "Arduino++" for more powerful boards with better structure, portability, and support for modern embedded systems.
+  | Feature        | Arduino                            | Mbed OS                         |
+| -------------- | ---------------------------------- | ------------------------------- |
+| Language       | C/C++                              | Modern C++ with RTOS support    |
+| Structure      | `setup()` / `loop()`               | `main()` function               |
+| Delay Function | `delay(1000)` (ms)                 | `ThisThread::sleep_for(1s)`     |
+| Serial I/O     | `Serial.begin()`, `Serial.print()` | `printf()` / `UnbufferedSerial` |
+| Multithreading | ❌ No native support                | ✅ Built-in with RTOS            |
+| Portability    | Limited                            | Modular and scalable            |
+
+
+| Keyword / Function          | Explanation                                      |
+| --------------------------- | ------------------------------------------------ |
+| `#include "mbed.h"`         | Imports Mbed OS libraries (drivers, RTOS)        |
+| `DigitalOut alertLED(LED1)` | Declares a digital output pin (LED1)             |
+| `std::chrono`               | Modern time unit system (`1s`, `500ms`, etc.)    |
+| `ThisThread::sleep_for()`   | Pauses the main thread (like `delay`)            |
+| `rand()`                    | Returns pseudo-random number                     |
+| `printf()`                  | Prints to serial terminal                        |
+| `get_simulated_value()`     | Custom function to generate random sensor values |
